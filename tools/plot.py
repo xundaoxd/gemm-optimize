@@ -24,7 +24,7 @@ def main(args):
     df['algo'] = pd.Series(map(lambda x: x.split('/')[0], df['name']))
     df['index'] = pd.Series(map(lambda x: int(x.split('/')[-1]), df['name']))
     sns.relplot(
-        x="index", y="cpu_time", kind="line",
+        x="index", y="real_time", kind="line",
         hue="algo",data=df,
     )
     if output == '-':
